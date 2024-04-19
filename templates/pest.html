@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+
+{#    <h1>请选择上传的图</h1>#}
+{#    <form action="" enctype='multipart/form-data' method='POST'>#}
+{#        <input type="file" name="file">#}
+{#        <input type="submit" value="upload">#}
+{#      #}
+{#    </form>#}
+    <div class="container">
+        <h1>请选择图片上传</h1>
+        <form method="POST"  class="upload-form" enctype="multipart/form-data" action="#">
+            <label for="file-upload" class="upload-btn">选择图片</label>
+            <p><input id="file-upload" class="upload-input" type="file" name="file"></p>
+             <p><input type="submit" value="提交"></p>
+        </form>
+        <div class="preview" id="preview-container" style="display: none;">
+            <img id="preview-img" src="#" alt="预览图片">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('file-upload').addEventListener('change', function() {
+            var file = this.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('preview-img').setAttribute('src', e.target.result);
+                    document.getElementById('preview-container').style.display = 'block';
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+{% endblock %}
