@@ -19,9 +19,9 @@ SQLALCHEMY_DATABASE_URI=DB_URI
 MAIL_SERVER ="smtp.qq.com"
 MAIL_USE_SSL = True       # 是否加密
 MAIL_PORT = 465
-MAIL_USERNAME ="2667603915@qq.com"
-MAIL_PASSWORD ="zsngccwlhimhecdf"
-MAIL_DEFAULT_SENDER ="2667603915@qq.com"
+MAIL_USERNAME ="xxxxx@qq.com"          # qq账户
+MAIL_PASSWORD ="xxxxxx"           # 授权码
+MAIL_DEFAULT_SENDER ="xxxxx"    # qq账户
 
 
 # flask cache配置
